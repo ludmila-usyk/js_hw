@@ -6,7 +6,7 @@
 
 // const productName = 'Droid';
 // const pricePerItem = 2000;
-//_______________________________________________
+//1_______________________________________________
 
 // let productName = "Droid";
 // let pricePerItem = 2000;
@@ -14,7 +14,7 @@
 
 // productName = "Repair droid";
 // pricePerItem = 3500;
-//_______________________________________________
+//2_______________________________________________
 
 // Change code below this line
 // const topSpeed = 160;
@@ -22,19 +22,19 @@
 // const login = "mango935";
 // let isOnline = true;
 // let isAdmin = false;
-//________________________________________________
+//3________________________________________________
 
 // const pricePerItem = 3500;
 // const orderedQuantity = 4;
 // Change code below this line
 // const totalPrice = pricePerItem * orderedQuantity
-//_________________________________________________
+//4_________________________________________________
 
 // const productName = "Droid";
 // const pricePerItem = 3500;
 // Change code below this line
 // const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
-//__________________________________________________
+//5__________________________________________________
 
 // Change code below this line
 // const orderedQuantity = 6;
@@ -42,14 +42,14 @@
 // const deliveryFee = 50;
 // const totalPrice = orderedQuantity * pricePerDroid + deliveryFee;
 // const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`
-//___________________________________________________
+//6___________________________________________________
 
 // Change code below this line
 // function sayHi() {
 //   console.log("Hello, this is my first function!")
 // }
 // sayHi();
-//___________________________________________________
+//7___________________________________________________
 
 // Change code below this line
 // function add(a, b, c) {
