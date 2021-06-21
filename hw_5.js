@@ -87,7 +87,7 @@
 //   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
-//7
+//7 функция-конструктор StringBuilder, которая принимает один параметр baseValue - произвольную строку, которая записывается на создаваемый объект в свойство value
 // function StringBuilder(baseValue) {
 //   this.value = baseValue;
 // };
@@ -106,4 +106,60 @@
 
 
 //8
+//class Car {};
+
+//9
+// class Car {
+//     brand;
+//     model;
+//     price;
+  
+//      constructor({ brand, model, price }){
+//       this.brand = brand;
+//       this.model = model;
+//       this.price = price;   
+//      }
+//   }
+
+
+//10
+// class Car {
+//     constructor({ brand, model, price }) {
+//       this.brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//       getPrice() {
+//       return this.price;
+//     }
+//         changePrice(newPrice) {
+//       this.price = newPrice;
+//       }
+//   }
+
+
+//11
+// class Car {
+//     #brand;
+//     constructor({ brand, model, price }) {
+//       this.#brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//    getBrand() {
+//        return this.#brand;
+//    }
+//    changeBrand(newBrand) {
+//         this.#brand = newBrand;
+//    }
+//   }
+// //    const audi = new Car ({ brand: 'Audi', model: 'Q3', price: 36000 });
+// //    audi.getBrand();
+// //    console.log(audi);
+// //    audi.changeBrand('Ford');
+// //    audi.getBrand();
+// //    console.log(audi);
+
+
+//12
 
