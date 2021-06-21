@@ -273,13 +273,7 @@
 // makeProduct("TV", 12000, messager);
 
 
-
-
-<<<<<<< HEAD
-// //транзакция
-=======
-//транзакция
->>>>>>> 99f6795a50fce6a09b0b142f9d1e211697d77cdf
+// транзакция
 // const Transaction = {
 //     DEPOSIT: "deposit",
 //     WITHDRAW: "withdraw",
@@ -326,19 +320,15 @@
 // console.log("balance", account.getBalance());
 // console.log(`history`, account.transactions);
 
-<<<<<<< HEAD
-=======
+// //прототип
+// const User = function ({ email, password } = {}) {
+//     this.email = email;
+//     this.password = password;
+// }
+// User.prototype.changeEmail = function (newMail) {
+//     this.email = newMail;
+// }
 
-//прототип
-const User = function ({ email, password } = {}) {
-    this.email = email;
-    this.password = password;
-}
-User.prototype.changeEmail = function (newMail) {
-    this.email = newMail;
-}
-
-const mango = new User({ email: 'mango@mail.com', password: 1111111 });
-mango.changeEmail('my-new-mail@mail.com');
-console.log(mango);
->>>>>>> 99f6795a50fce6a09b0b142f9d1e211697d77cdf
+// const mango = new User({ email: 'mango@mail.com', password: 1111111 });
+// mango.changeEmail('my-new-mail@mail.com');
+// console.log(mango);
