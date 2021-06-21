@@ -276,48 +276,62 @@
 
 
 //транзакция
-const Transaction = {
-    DEPOSIT: "deposit",
-    WITHDRAW: "withdraw",
-};
-const account = {
-    balance: 10,
-    transactions: [],
+// const Transaction = {
+//     DEPOSIT: "deposit",
+//     WITHDRAW: "withdraw",
+// };
+// const account = {
+//     balance: 10,
+//     transactions: [],
 
-    createTransaction(amount, type) {
-        return {
-            id: this.transactions.length,
-            amount,
-            type,
-        };
-    },
-    deposit(amount) {
-        this.balance += amount;
-        const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
-        this.transactions.push(transaction);
-    },
+//     createTransaction(amount, type) {
+//         return {
+//             id: this.transactions.length,
+//             amount,
+//             type,
+//         };
+//     },
+//     deposit(amount) {
+//         this.balance += amount;
+//         const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+//         this.transactions.push(transaction);
+//     },
 
-    withdraw(amount) {
-        this.balance -= amount;
-        const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
-        this.transactions.push(transaction);
-    },
+//     withdraw(amount) {
+//         this.balance -= amount;
+//         const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+//         this.transactions.push(transaction);
+//     },
 
-    getBalance() {
-        return this.balance;
-    },
+//     getBalance() {
+//         return this.balance;
+//     },
 
-    getTransactionDetails(id) {
-        for (let transaction of this.transactions) {
-            if (transaction.id === id) {
-                return transaction;
-            }
-        }
-        return "Transaction Not Exist";
-    }
-};
-account.deposit(120);
-account.withdraw(15);
-console.log( account.getTransactionDetails(1));
-console.log("balance", account.getBalance());
-console.log(`history`, account.transactions);
+//     getTransactionDetails(id) {
+//         for (let transaction of this.transactions) {
+//             if (transaction.id === id) {
+//                 return transaction;
+//             }
+//         }
+//         return "Transaction Not Exist";
+//     }
+// };
+// account.deposit(120);
+// account.withdraw(15);
+// console.log( account.getTransactionDetails(1));
+// console.log("balance", account.getBalance());
+// console.log(`history`, account.transactions);
+
+
+//прототип
+const User = function ({ email, password } = {}) {
+    this.email = email;
+    this.password = password;
+}
+User.prototype.changeEmail = function (newMail) {
+    this.email = newMail;
+}
+
+const mango = new User({ email: 'mango@mail.com', password: 1111111 });
+mango.changeEmail('my-new-mail@mail.com');
+console.log(mango);
