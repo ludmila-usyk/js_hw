@@ -150,7 +150,7 @@
 //        return this.#brand;
 //    }
 //    changeBrand(newBrand) {
-//         this.#brand = newBrand;
+//         this.brand = newBrand;
 //    }
 //   }
 // //    const audi = new Car ({ brand: 'Audi', model: 'Q3', price: 36000 });
@@ -161,5 +161,227 @@
 // //    console.log(audi);
 
 
-//12
+//12 Задание Выполни рефакторинг заменив функцию-конструктор Storage на класс с методами. Сделай так, чтобы свойство items было приватным. Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// //after
+// class Storage {
+//     #items
+//     constructor(items){
+//     this.#items = items;
+//     }
+//     getItems () {
+//     return this.#items;
+//   }
+//     addItem (newItem) {
+//    return this.#items.push(newItem);
+//   }
+//     removeItem(item) {
+//     const itemIndex = this.#items.indexOf(item);
+//     this.#items.splice(itemIndex, 1);
+//   }
+//   };
+//   // Пиши код выше этой строки
+//   const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+//   storage.addItem("Дроид");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+//   storage.removeItem("Пролонгер");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+// //before
+// function Storage(items) {
+//     this.items = items;
+//   }
+  
+//   Storage.prototype.getItems = function () {
+//     return this.items;
+//   };
+  
+//   Storage.prototype.addItem = function (newItem) {
+//     this.items.push(newItem);
+//   };
+  
+//   Storage.prototype.removeItem = function (item) {
+//     const itemIndex = this.items.indexOf(item);
+//     this.items.splice(itemIndex, 1);
+//   };
+  
+//   // Пиши код выше этой строки
+//   const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+//   storage.addItem("Дроид");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+//   storage.removeItem("Пролонгер");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+  
+
+//13 Задание: Выполни рефакторинг заменив функцию-конструктор StringBuilder на класс с методами. Сделай так, чтобы свойство value было приватным. Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// after
+// class StringBuilder {
+//     #value
+//        constructor(value){
+//        this.#value = value;
+//        }
+//     getValue () {
+//        return this.#value;
+//     }
+//     padEnd (str) {
+//            this.#value += str;
+//      }
+//     padStart (str) {
+//             this.#value = str + this.#value;
+//   };
+//       padBoth (str) {
+//             this.padStart(str);
+//            this.padEnd(str);
+//   };}
+//   // Пиши код выше этой строки
+//   const builder = new StringBuilder('.');
+//   console.log(builder.getValue()); // '.'
+//   builder.padStart('^');
+//   console.log(builder.getValue()); // '^.'
+//   builder.padEnd('^');
+//   console.log(builder.getValue()); // '^.^'
+//   builder.padBoth('=');
+//   console.log(builder.getValue()); // '=^.^='
+
+// //Before
+// function StringBuilder(baseValue) {
+//     this.value = baseValue;
+//   }
+//   StringBuilder.prototype.getValue = function () {
+//     return this.value;
+//   };
+//   StringBuilder.prototype.padEnd = function (str) {
+//     this.value += str;
+//   };
+//   StringBuilder.prototype.padStart = function (str) {
+//     this.value = str + this.value;
+//   };
+//   StringBuilder.prototype.padBoth = function (str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   };
+//   // Пиши код выше этой строки
+//   const builder = new StringBuilder('.');
+//   console.log(builder.getValue()); // '.'
+//   builder.padStart('^');
+//   console.log(builder.getValue()); // '^.'
+//   builder.padEnd('^');
+//   console.log(builder.getValue()); // '^.^'
+//   builder.padBoth('=');
+//   console.log(builder.getValue()); // '=^.^='
+
+
+//14
+// class Car {
+//     #model;
+//     #price;
+//     #brand;
+  
+//     constructor({ model, price, brand }) {
+//       this.#model = model;
+//       this.#price = price;
+//       this.#brand = brand;
+//     }
+  
+//     get model() {
+//       return this.#model;
+//     }
+//     set model(newModel) {
+//       this.#model = newModel;
+//     }
+  
+//     get price() {
+//       return this.#price;
+//     }
+//     set price(newPrice) {
+//       this.#price = newPrice;
+//     }
+  
+//     get brand() {
+//       return this.#brand;
+//     }
+//     set brand(newBrand) {
+//       this.#brand = newBrand;
+//     }
+//   }
+
+
+//15 Задание Выполни рефакторинг класса Car. Добавь публичное статическое свойство MAX_PRICE со значением 50000 - максимально допустимая цена автомобиля. Добавь сеттеру price проверку передаваемого значения параметра newPrice. Если оно больше чем MAX_PRICE, сеттер ничего не делает, а если меньше или равно, то перезаписывает цену автомобиля.
+//after
+// class Car {
+//     // Пиши код ниже этой строки
+//     static MAX_PRICE = 50000;
+//     #price;
+//     constructor({ price }) {
+//       this.#price = price;
+//     }
+//     get price() {
+//       return this.#price;
+//     }
+//     set price(newPrice) {
+//      if (newPrice <= Car.MAX_PRICE) {
+//          this.#price = newPrice;
+//     }
+//       return this.#price;  }  
+//     // Пиши код выше этой строки
+//   }
+  
+//   const audi = new Car({price: 35000});
+//   console.log(audi.price); // 35000
+  
+//   audi.price = 49000;
+//   console.log(audi.price); // 49000
+  
+//   audi.price = 51000;
+//   console.log(audi.price); // 49000
+//before
+// class Car {
+//     // Пиши код ниже этой строки
+//     static MAX_PRICE = 10000;
+//     #price;
+  
+//     constructor({ price }) {
+//       this.#price = price;
+//     }
+  
+//     get price() {
+//       return this.#price;
+//     }
+  
+//     set price(newPrice) {
+//       this.#price = newPrice;
+//     }
+//     // Пиши код выше этой строки
+//   }
+  
+//   const audi = new Car({price: 35000});
+//   console.log(audi.price); // 35000
+  
+//   audi.price = 49000;
+//   console.log(audi.price); // 49000
+  
+//   audi.price = 51000;
+//   console.log(audi.price); // 49000
+
+
+//16
+// class Car {
+//     static #MAX_PRICE = 50000;
+//     // Пиши код ниже этой строки
+//       static checkPrice(price) {
+//       if (price > this.#MAX_PRICE) return 'Внимание! Цена превышает допустимую.';
+//       return 'Всё хорошо, цена в порядке.'
+//       }
+//     // Пиши код выше этой строки
+//     constructor({ price }) {
+//       this.price = price;
+//     }
+//   }
+//   const audi = new Car({ price: 36000 });
+//   const bmw = new Car({ price: 64000 });
+//   console.log(Car.checkPrice(audi.price)); // Всё хорошо, цена в порядке.
+//   console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
+
+
+//17
 
