@@ -383,5 +383,107 @@
 //   console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
 
 
-//17
+//17 В приложении нужен администратор с возможностью добавлять почты пользователей в чёрный список. Объяви класс Admin, который наследует от класса User. Добавь классу Admin публичное статическое свойство AccessLevel (уровень доступа), значение которого это объект { BASIC: 'basic', SUPERUSER: 'superuser' }.
+// class User {
+//     email;
+//     constructor(email) {
+//       this.email = email;
+//     }
+//     get email() {
+//       return this.email;
+//     }
+//     set email(newEmail) {
+//       this.email = newEmail;
+//     }
+//   }
+//   // Пиши код ниже этой строки
+//   class Admin extends User {
+//    static AccessLevel = { BASIC: 'basic', SUPERUSER: 'superuser' };
+//   }
 
+
+//18
+// class User {
+//     email;
+//     constructor(email) {
+//       this.email = email;
+//     }
+//     get email() {
+//       return this.email;
+//     }
+//     set email(newEmail) {
+//       this.email = newEmail;
+//     }
+//   }
+//   class Admin extends User {
+//     // Пиши код ниже этой строки
+//     static AccessLevel = {
+//       BASIC: 'basic',
+//       SUPERUSER: 'superuser'
+//     };
+//   accessLevel;
+//      constructor({ email, accessLevel }) {
+//           super(email);
+//           this.accessLevel = accessLevel;
+//        };
+//   }
+//   const mango = new Admin({
+//     email: 'mango@mail.com',
+//     accessLevel: Admin.AccessLevel.SUPERUSER
+//   });
+//   console.log(mango.email); // mango@mail.com
+//   console.log(mango.accessLevel); // superuser
+
+
+//19
+// class User {
+//     email;
+  
+//     constructor(email) {
+//       this.email = email;
+//     }
+  
+//     get email() {
+//       return this.email;
+//     }
+  
+//     set email(newEmail) {
+//       this.email = newEmail;
+//     }
+//   }
+//   class Admin extends User {
+//     // Пиши код ниже этой строки
+  
+//     static AccessLevel = {
+//       BASIC: 'basic',
+//       SUPERUSER: 'superuser'
+//     };
+  
+//     accessLevel;
+  
+//     constructor({ email, accessLevel }) {
+//       super(email);
+//       this.accessLevel = accessLevel;
+//     }
+//      blacklistedEmails = [];
+  
+//      blacklist(email) {
+//        this.blacklistedEmails.push(email);
+//      }
+  
+//      isBlacklisted(email) {
+//       return this.blacklistedEmails.includes(email);
+//      }
+//   }
+  
+//   const mango = new Admin({
+//     email: 'mango@mail.com',
+//     accessLevel: Admin.AccessLevel.SUPERUSER
+//   });
+  
+//   console.log(mango.email); // mango@mail.com
+//   console.log(mango.accessLevel); // superuser
+//   mango.blacklist('poly@mail.com');
+//   console.log(mango.blacklistedEmails); // 'poly@mail.com'
+//   console.log(mango.isBlacklisted('mango@mail.com')); //  false
+//   console.log(mango.isBlacklisted('poly@mail.com')); // true 
